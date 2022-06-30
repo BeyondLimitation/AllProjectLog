@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    organization = "lee-s3"
+    organization = "Lee-personal-project"
     workspaces {
         name = "AllProjectLog"
     }
