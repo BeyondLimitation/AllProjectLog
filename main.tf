@@ -13,7 +13,7 @@ provider "aws" {
 
 module "bucket_save_projects" {
     source = "terraform-aws-modules/s3-bucket/aws"
-    version = var.s3-bucket-version
+    version = "3.2.4"
 
     bucket ="lee-save-projects-results"
     # 권한이 있는 자만 접근가능. 기본적으로 Private.
