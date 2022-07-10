@@ -15,7 +15,7 @@ module "bucket_save_projects" {
     source = "terraform-aws-modules/s3-bucket/aws"
     version = "3.2.4"
 
-    bucket ="lee-save-projects-results"
+    bucket = var.s3-name
     # 권한이 있는 자만 접근가능. 기본적으로 Private.
     acl    = "private"
 
@@ -25,4 +25,10 @@ module "bucket_save_projects" {
     tags = {
         "IaCTool" = "Terraform"
     }
+}
+
+resource "aws_s3_object" "nextcloud_project" {
+  bucket = var.s3-name
+  key    = "nextcloud/README.md"
+  source = "s3/README.md"
 }
